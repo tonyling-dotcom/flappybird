@@ -1,0 +1,89 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "name": "Easy Glide",
+      "wall_speed": 2,
+      "wall_spawn_interval": 3000,
+      "enemy_speed": 1.5,
+      "enemy_spawn_interval": 8000,
+      "enemy_shoot_interval": 2500,
+      "projectile_speed": 3,
+      "coin_speed": 2,
+      "coin_spawn_interval": 4000,
+      "wall_gap": 220,
+      "required_score": 5
+    },
+    {
+      "level": 2,
+      "name": "City Cruiser",
+      "wall_speed": 2.5,
+      "wall_spawn_interval": 2700,
+      "enemy_speed": 2,
+      "enemy_spawn_interval": 7000,
+      "enemy_shoot_interval": 2300,
+      "projectile_speed": 3.5,
+      "coin_speed": 2.5,
+      "coin_spawn_interval": 3500,
+      "wall_gap": 200,
+      "required_score": 10
+    },
+    {
+      "level": 3,
+      "name": "Urban Flyer",
+      "wall_speed": 3,
+      "wall_spawn_interval": 2500,
+      "enemy_speed": 2.5,
+      "enemy_spawn_interval": 6000,
+      "enemy_shoot_interval": 2000,
+      "projectile_speed": 4,
+      "coin_speed": 3,
+      "coin_spawn_interval": 3000,
+      "wall_gap": 190,
+      "required_score": 15
+    },
+    {
+      "level": 4,
+      "name": "Skyline Master",
+      "wall_speed": 3.5,
+      "wall_spawn_interval": 2300,
+      "enemy_speed": 3,
+      "enemy_spawn_interval": 5500,
+      "enemy_shoot_interval": 1800,
+      "projectile_speed": 4.5,
+      "coin_speed": 3.5,
+      "coin_spawn_interval": 2800,
+      "wall_gap": 180,
+      "required_score": 20
+    },
+    {
+      "level": 5,
+      "name": "Legendary Bird",
+      "wall_speed": 4,
+      "wall_spawn_interval": 2000,
+      "enemy_speed": 3.5,
+      "enemy_spawn_interval": 5000,
+      "enemy_shoot_interval": 1500,
+      "projectile_speed": 5,
+      "coin_speed": 4,
+      "coin_spawn_interval": 2500,
+      "wall_gap": 170,
+      "required_score": 30
+    }
+  ],
+  "game_settings": {
+    "screen_width": 800,
+    "screen_height": 600,
+    "gravity": 0.4,
+    "flap_strength": -8,
+    "player_size": 60,
+    "enemy_size": 50,
+    "coin_size": 30,
+    "projectile_size": 15,
+    "wall_width": 80,
+    "score_per_wall": 1,
+    "score_per_enemy": 3,
+    "score_per_coin": 2
+  }
+}
+

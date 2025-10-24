@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  flappybird:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flappybird-game
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - SDL_VIDEODRIVER=x11
+    volumes:
+      # Mount X11 socket for GUI display (Linux/Mac)
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Persist high scores
+      - ./highscore.json:/app/highscore.json
+    network_mode: host
+    stdin_open: true
+    tty: true
+    # Optional: if you need audio
+    devices:
+      - /dev/snd:/dev/snd
+    privileged: false
+    # For better security, you can also add:
+    security_opt:
+      - label=type:container_runtime_t
+
