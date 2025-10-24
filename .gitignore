@@ -80,6 +80,13 @@ coverage.xml
 # Docker
 .dockerignore
 
+# Flask
+instance/
+.webassets-cache
+
+# Railway
+.railway/
+
 # OS
 Thumbs.db
 .DS_Store

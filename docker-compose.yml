@@ -1,27 +1,27 @@
 version: '3.8'
 
 services:
-  flappybird:
+  flappybird-web:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: flappybird-game
+    container_name: flappybird-web
     environment:
-      - DISPLAY=${DISPLAY:-:0}
-      - SDL_VIDEODRIVER=x11
+      - PORT=5000
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5000:5000"
     volumes:
-      # Mount X11 socket for GUI display (Linux/Mac)
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
       # Persist high scores
       - ./highscore.json:/app/highscore.json
-    network_mode: host
-    stdin_open: true
-    tty: true
-    # Optional: if you need audio
-    devices:
-      - /dev/snd:/dev/snd
-    privileged: false
-    # For better security, you can also add:
-    security_opt:
-      - label=type:container_runtime_t
+      # Mount templates and static for development (optional)
+      - ./templates:/app/templates
+      - ./static:/app/static
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 

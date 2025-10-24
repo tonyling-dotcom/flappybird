@@ -1,0 +1,39 @@
+# Similar to .dockerignore but for Railway
+
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+*.venv
+
+# Development
+.vscode/
+.idea/
+*.md
+!README.md
+
+# Tests
+tests/
+*_test.py
+
+# Docker (Railway will build its own)
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Original pygame file (not needed for web version)
+# Keep it commented out if you want to keep it in the repo
+# flappy_bird.py
+
+# Documentation
+COINS_FEATURE.md
+PROJECTILES_FEATURE.md
+README_DOCKER.md
+
