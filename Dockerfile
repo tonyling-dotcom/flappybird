@@ -17,6 +17,10 @@ COPY levels.json .
 COPY highscore.json .
 COPY templates/ ./templates/
 COPY static/ ./static/
+COPY start.sh .
+
+# Make start script executable
+RUN chmod +x start.sh
 
 # Create directory for runtime data
 RUN mkdir -p /app/data
@@ -28,6 +32,6 @@ ENV PYTHONUNBUFFERED=1
 # Expose port
 EXPOSE 5000
 
-# Run the Flask web application with gunicorn
-CMD gunicorn --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60 app:app
+# Run the Flask web application using startup script
+CMD ["./start.sh"]
 

@@ -1,15 +1,10 @@
 #!/bin/bash
-echo "Starting Flappy Bird Web Server..."
-echo ""
-echo "Visit http://localhost:5000 in your browser"
-echo "Press Ctrl+C to stop the server"
-echo ""
+# Startup script for Railway deployment
 
-# Activate virtual environment if it exists
-if [ -d "venv" ]; then
-    source venv/bin/activate
-fi
+# Use PORT from environment or default to 5000
+PORT=${PORT:-5000}
 
-# Start the Flask app
-python app.py
+echo "Starting Gunicorn on port $PORT..."
 
+# Start Gunicorn
+exec gunicorn --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 60 app:app
