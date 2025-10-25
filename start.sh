@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Startup script for Railway deployment
 
 # Use PORT from environment or default to 5000
